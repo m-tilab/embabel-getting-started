@@ -1,14 +1,14 @@
-package com.embabel.example.agent;
+package com.example.embabel.agent;
 
 import com.embabel.agent.api.annotation.AchievesGoal;
 import com.embabel.agent.api.annotation.Action;
 import com.embabel.agent.api.annotation.Agent;
 import com.embabel.agent.api.common.OperationContext;
-import com.embabel.example.model.City;
-import com.embabel.example.model.CityAttractions;
-import com.embabel.example.model.CityBasicInfo;
-import com.embabel.example.model.CityPopulationInfo;
-import com.embabel.example.model.EmbabelEnquiryRequest;
+import com.example.embabel.model.City;
+import com.example.embabel.model.CityAttractions;
+import com.example.embabel.model.CityBasicInfo;
+import com.example.embabel.model.CityPopulationInfo;
+import com.example.embabel.model.EmbabelEnquiryRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
@@ -23,7 +23,7 @@ public class CityAttractionsInfoProviderAgent {
     @Action
     public CityBasicInfo getCityBasicInfo(EmbabelEnquiryRequest enquiryRequest, OperationContext context) {
         return context.ai()
-                .withDefaultLlm()
+                .withAutoLlm()
                 //.withLlm(OpenAiModels.GPT_41)
                 //.withLlm("qwen3:8b")
                 //.withFirstAvailableLlmOf("qwen3:8b", OpenAiModels.GPT_41)
@@ -39,7 +39,7 @@ public class CityAttractionsInfoProviderAgent {
     @Action
     public CityPopulationInfo getCityPopulationInfo(CityBasicInfo cityBasicInfo, OperationContext context) {
         return context.ai()
-                .withDefaultLlm()
+                .withAutoLlm()
                 //.withLlm(OpenAiModels.GPT_41)
                 //.withLlm("qwen3:8b")
                 //.withFirstAvailableLlmOf("qwen3:8b", OpenAiModels.GPT_41)
@@ -56,7 +56,7 @@ public class CityAttractionsInfoProviderAgent {
     @Action
     public City getCityInfo(CityBasicInfo basicInfo, CityPopulationInfo populationInfo, OperationContext context) {
         CityAttractions cityAttractions = context.ai()
-                .withDefaultLlm()
+                .withAutoLlm()
                 //.withLlmByRole("better")
                 .createObjectIfPossible(
                         """

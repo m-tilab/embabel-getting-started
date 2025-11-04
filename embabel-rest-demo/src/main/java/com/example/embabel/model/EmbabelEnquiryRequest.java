@@ -1,4 +1,4 @@
-package com.embabel.example.model;
+package com.example.embabel.model;
 
 import jakarta.validation.constraints.NotBlank;
 

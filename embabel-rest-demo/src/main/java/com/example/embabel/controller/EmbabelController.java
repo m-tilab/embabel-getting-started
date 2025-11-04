@@ -1,15 +1,13 @@
-package com.embabel.example.controller;
+package com.example.embabel.controller;
 
 import com.embabel.agent.api.common.Ai;
 import com.embabel.agent.api.common.autonomy.AgentInvocation;
 import com.embabel.agent.core.AgentPlatform;
 import com.embabel.agent.core.ProcessOptions;
-import com.embabel.example.agent.CityAttractionsInfoProviderAgent;
-import com.embabel.example.model.City;
-import com.embabel.example.model.EmbabelEnquiryRequest;
+import com.example.embabel.model.City;
+import com.example.embabel.model.EmbabelEnquiryRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
