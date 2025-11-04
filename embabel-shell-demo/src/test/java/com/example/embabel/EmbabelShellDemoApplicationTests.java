@@ -1,0 +1,13 @@
+package com.example.embabel;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class EmbabelShellDemoApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
