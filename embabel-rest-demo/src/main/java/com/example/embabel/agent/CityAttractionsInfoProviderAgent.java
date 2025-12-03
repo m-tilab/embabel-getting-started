@@ -23,7 +23,7 @@ public class CityAttractionsInfoProviderAgent {
     @Action
     public CityBasicInfo getCityBasicInfo(EmbabelEnquiryRequest enquiryRequest, OperationContext context) {
         return context.ai()
-                .withAutoLlm()
+                .withLlm("qwen3:4b")
                 //.withLlm(OpenAiModels.GPT_41)
                 //.withLlm("qwen3:8b")
                 //.withFirstAvailableLlmOf("qwen3:8b", OpenAiModels.GPT_41)
@@ -39,15 +39,20 @@ public class CityAttractionsInfoProviderAgent {
     @Action
     public CityPopulationInfo getCityPopulationInfo(CityBasicInfo cityBasicInfo, OperationContext context) {
         return context.ai()
-                .withAutoLlm()
                 //.withLlm(OpenAiModels.GPT_41)
-                //.withLlm("qwen3:8b")
+                .withAutoLlm()
                 //.withFirstAvailableLlmOf("qwen3:8b", OpenAiModels.GPT_41)
                 //.withLlmByRole("faster")
                 .createObjectIfPossible(
                         """
-                        Create a CityPopulationInfo from this user input, extracting their details:
-                        %s""".formatted(cityBasicInfo.name()),
+                        Generate a structured CityPopulationInfo for the city "%s".
+                        Use realistic values.
+    
+                        JSON format:
+                        {
+                          "population": number
+                        }
+                        """.formatted(cityBasicInfo.name()),
                         CityPopulationInfo.class
                 );
     }

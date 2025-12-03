@@ -32,7 +32,7 @@ public class EmbabelController {
 
         var agentInvocation = AgentInvocation.create(agentPlatform, City.class);
         City city = agentInvocation.invoke(enquiryRequest);
-        log.info("chat1:: Result movie: {}", city);
+        log.info("chat1:: Result city: {}", city);
         return city;
     }
 
@@ -42,7 +42,7 @@ public class EmbabelController {
         var agentInvocation = AgentInvocation.builder(agentPlatform)
             .options(ProcessOptions.builder().verbosity(v-> v.showPrompts(true)).build()).build(City.class);
         City city = agentInvocation.invoke(enquiryRequest);
-        log.info("chat2:: Result movie: {}", city);
+        log.info("chat2:: Result city: {}", city);
         return city;
     }
 

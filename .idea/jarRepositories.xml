@@ -7,6 +7,16 @@
       <option name="url" value="https://repo1.maven.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="github" />
+      <option name="name" value="GitHub kfzteile24 Apache Maven Packages" />
+      <option name="url" value="https://maven.pkg.github.com/kfzteile24/json-schema-java-bundle" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="embabel-snapshots" />
       <option name="name" value="embabel-snapshots" />
       <option name="url" value="https://repo.embabel.com/artifactory/libs-snapshot" />
